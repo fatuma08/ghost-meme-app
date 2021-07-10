@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../App.css';
 import { useHistory } from "react-router-dom";
+import UseToken from './UseToken';
 
 async function loginUser(username, password) {
     // insert logic to check username/password combo
@@ -14,6 +15,10 @@ async function loginUser(username, password) {
 
 function Login({ setToken }) {
     const [failureMessage, setFailureMessage] = useState();
+    
+    if(!setToken){
+      setToken = UseToken().setToken;
+    }
 
     let history = useHistory();
 

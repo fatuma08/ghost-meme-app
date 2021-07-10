@@ -6,7 +6,7 @@ import { Route, NavLink, HashRouter } from "react-router-dom";
 import UseToken from './components/UseToken';
 
 function App() {
-  const { token, setToken } = UseToken();
+  const token = UseToken().token;
   
   return (
     <HashRouter>
